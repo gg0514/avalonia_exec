@@ -16,6 +16,34 @@
         <vm:MainWindowViewModel />
     </Design.DataContext>
 
+
+    <Window.DataTemplates>
+        <DataTemplate DataType="model:Person">
+            <Grid ColumnDefinitions="Auto, *" RowDefinitions="Auto, Auto, Auto, Auto">
+                <TextBlock Grid.Row="0" Text="First Name: " />
+                <TextBlock Grid.Row="0"
+                        Grid.Column="1"
+                        Text="{Binding FirstName}" />
+
+                <TextBlock Grid.Row="1" Text="Last Name: " />
+                <TextBlock Grid.Row="1"
+                        Grid.Column="1"
+                        Text="{Binding LastName}" />
+
+                <TextBlock Grid.Row="2" Text="Age: " />
+                <TextBlock Grid.Row="2"
+                        Grid.Column="1"
+                        Text="{Binding Age, StringFormat={}{0} years}" />
+
+                <TextBlock Grid.Row="3" Text="Sex: " />
+                <TextBlock Grid.Row="3"
+                        Grid.Column="1"
+                        Text="{Binding Sex}" />
+            </Grid>
+        </DataTemplate>
+    </Window.DataTemplates>
+
+
     <ListBox ItemsSource="{Binding People}" />
 
 </Window>
